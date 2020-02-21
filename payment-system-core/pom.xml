@@ -22,7 +22,7 @@
             </plugin>
         </plugins>
     </build>
-    <artifactId>payment-sytem-core</artifactId>
+    <artifactId>payment-system-core</artifactId>
 
     <dependencies>
         <!-- spring boot dependencies -->
