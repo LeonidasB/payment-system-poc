@@ -1,0 +1,4 @@
+# Project exclude paths
+/payment-system-api/target/
+/payment-system-core/target/
+/payment-system-risk-engine/target/
