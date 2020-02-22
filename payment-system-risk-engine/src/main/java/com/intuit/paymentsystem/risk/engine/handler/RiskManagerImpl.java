@@ -22,7 +22,7 @@ public class RiskManagerImpl implements RiskManager{
 
     }
 
-    protected double evaluateRisk(ProcessedPayment payment){
+    private double evaluateRisk(ProcessedPayment payment){
         return Math.random() * 9 + 1;
     }
 }

@@ -25,17 +25,12 @@ import static com.intuit.paymentsystem.api.Consts.QUEUE_NAME;
 @Component
 @Slf4j
 public class PaymentHandler {
-    @Autowired
-    JmsTemplate jmsTemplate;
 
-    private void sendMessage(final ProcessedPayment processedPayment) {
-        log.info("sending payment to queue {} ", processedPayment);
-        jmsTemplate.send(QUEUE_NAME, new MessageCreator() {
-            @Override
-            public Message createMessage(Session session) throws JMSException {
-                return session.createObjectMessage(processedPayment);
-            }
-        });
+    private JmsTemplate jmsTemplate;
+
+    @Autowired
+    public PaymentHandler(JmsTemplate jmsTemplate){
+        this.jmsTemplate = jmsTemplate;
     }
 
     //method to send payment to queue
@@ -48,5 +43,15 @@ public class PaymentHandler {
             throw new ServerInternalException("Exception on send payment to queue");
         }
         return processedPayment;
+    }
+
+    private void sendMessage(final ProcessedPayment processedPayment) {
+        log.info("sending payment to queue {} ", processedPayment);
+        jmsTemplate.send(QUEUE_NAME, new MessageCreator() {
+            @Override
+            public Message createMessage(Session session) throws JMSException {
+                return session.createObjectMessage(processedPayment);
+            }
+        });
     }
 }

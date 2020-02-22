@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Controller;
 
-import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.ObjectMessage;
 
@@ -23,14 +22,17 @@ import static com.intuit.paymentsystem.api.Consts.QUEUE_NAME;
 @Controller
 @Slf4j
 public class PaymentListener {
-
-    @Autowired
     private RiskManager riskManager;
-    @Autowired
     private PaymentDao paymentDao;
 
+    @Autowired
+    public PaymentListener(RiskManager riskManager, PaymentDao paymentDao){
+        this.riskManager = riskManager;
+        this.paymentDao = paymentDao;
+    }
+
     @JmsListener(destination = QUEUE_NAME)
-    public void receiveMessageFromTopic(final Message paymentMessage) throws JMSException {
+    public void receiveMessageFromTopic(final Message paymentMessage){
         log.info("Received message " + paymentMessage);
 
         if(paymentMessage instanceof ObjectMessage) {

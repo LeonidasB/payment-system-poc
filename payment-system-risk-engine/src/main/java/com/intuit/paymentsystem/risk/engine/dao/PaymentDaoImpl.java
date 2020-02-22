@@ -19,8 +19,13 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class PaymentDaoImpl implements PaymentDao {
-    @Autowired
+
     private PaymentRepository repository;
+
+    @Autowired
+    public PaymentDaoImpl(PaymentRepository repository){
+        this.repository = repository;
+    }
 
     public String storePayment(ProcessedPayment payment, boolean accept){
         PaymentEntity entity = transformToEntity(payment, accept);
