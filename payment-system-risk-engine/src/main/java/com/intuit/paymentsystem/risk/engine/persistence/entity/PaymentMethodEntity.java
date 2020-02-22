@@ -1,6 +1,7 @@
-package com.intuit.paymentsystem.risk.engine.persistence;
+package com.intuit.paymentsystem.risk.engine.persistence.entity;
 
 import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
@@ -10,7 +11,7 @@ import javax.persistence.*;
  * @since {version}
  */
 @Entity
-@Table(name = ("PaymentMethod"))
+@Table(name = ("PAYMENT_METHOD"), schema = ("intuit_payment"))
 @ToString
 @EqualsAndHashCode
 @Getter
@@ -19,8 +20,9 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class PaymentMethodEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid")
+    @Column(name = ("ID"), nullable = false, updatable = false)
     private String methodID;
     @Column(name = ("NAME"), nullable = false)
     private String name;
