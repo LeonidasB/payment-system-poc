@@ -30,4 +30,8 @@ public class UserEntity {
     private String email;
     @Column(name = ("DELETED"), nullable = false)
     private boolean deleted;
+
+    public UserEntity(String userID) {
+        this.userID = userID;
+    }
 }

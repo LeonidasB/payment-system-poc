@@ -15,6 +15,7 @@ import javax.jms.ObjectMessage;
 import static com.intuit.paymentsystem.api.Consts.QUEUE_NAME;
 
 /**
+ * Queue listener
  * @author leonidb
  * @date 21/02/2020
  * @since {version}

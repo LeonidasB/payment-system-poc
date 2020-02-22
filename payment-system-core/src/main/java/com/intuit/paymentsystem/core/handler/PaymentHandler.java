@@ -11,13 +11,13 @@ import org.springframework.stereotype.Component;
 
 import javax.jms.JMSException;
 import javax.jms.Message;
-import javax.jms.ObjectMessage;
 import javax.jms.Session;
 import java.util.UUID;
 
 import static com.intuit.paymentsystem.api.Consts.QUEUE_NAME;
 
 /**
+ * business logic handler
  * @author leonidb
  * @date 21/02/2020
  * @since {version}
@@ -38,6 +38,7 @@ public class PaymentHandler {
         });
     }
 
+    //method to send payment to queue
     public ProcessedPayment handle(Payment payment){
         ProcessedPayment processedPayment = new ProcessedPayment(payment, UUID.randomUUID());
         try{

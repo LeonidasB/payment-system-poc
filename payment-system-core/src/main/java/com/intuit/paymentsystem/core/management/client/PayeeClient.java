@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.UUID;
 
 /**
+ * mock client to validate external user exist
  * @author leonidb
  * @date 21/02/2020
  * @since {version}

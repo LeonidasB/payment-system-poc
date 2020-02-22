@@ -28,4 +28,8 @@ public class PaymentMethodEntity {
     private String name;
     @Column(name = ("DELETED"), nullable = false)
     private boolean deleted;
+
+    public PaymentMethodEntity(String methodID) {
+        this.methodID = methodID;
+    }
 }

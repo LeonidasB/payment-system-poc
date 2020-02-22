@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 /**
+ * Risk manager implementation
  * @author leonidb
  * @date 22/02/2020
  * @since {version}

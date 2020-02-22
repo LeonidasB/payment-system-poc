@@ -26,12 +26,15 @@ public class PaymentEntity {
     private String id;
     @Column(name = ("PAYMENT_REQUEST_ID"), nullable = false)
     private String paymentRequestID;
-    @Column(name = ("USER_ID"), nullable = false)
-    private String user;
-    @Column(name = ("PAYEE_ID"), nullable = false)
-    private String payee;
-    @Column(name = ("PAYMENT_METHOD_ID"), nullable = false)
-    private String paymentMethod;
+    @ManyToOne
+    @JoinColumn(name = ("USER_ID"), referencedColumnName = ("ID"))
+    private UserEntity userEntity;
+    @ManyToOne
+    @JoinColumn(name = ("PAYEE_ID"), referencedColumnName = ("ID"))
+    private ExternalUserEntity payee;
+    @ManyToOne
+    @JoinColumn(name = ("PAYMENT_METHOD_ID"), referencedColumnName = ("ID"))
+    private PaymentMethodEntity paymentMethod;
     @Column(name = ("AMOUNT"), nullable = false)
     private double amount;
     @Column(name = ("CURRENCY"), nullable = false)

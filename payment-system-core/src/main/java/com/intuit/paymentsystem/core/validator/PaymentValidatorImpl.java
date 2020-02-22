@@ -14,6 +14,7 @@ import java.util.UUID;
 import java.util.regex.Pattern;
 
 /**
+ * payment validator implementation
  * @author leonidb
  * @date 21/02/2020
  * @since {version}

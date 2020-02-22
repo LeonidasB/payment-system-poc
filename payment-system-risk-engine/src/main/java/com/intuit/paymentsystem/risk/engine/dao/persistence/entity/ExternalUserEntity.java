@@ -30,4 +30,8 @@ public class ExternalUserEntity {
     private String email;
     @Column(name = ("DELETED"), nullable = false)
     private boolean deleted;
+
+    public ExternalUserEntity(String userID) {
+        this.userID = userID;
+    }
 }
