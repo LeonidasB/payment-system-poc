@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "d534cdb8-8ddd-4907-a385-cfae8e295b96",
+		"name": "PaymentPOC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Send payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"amount\": 5666.2,\n  \"currency\": \"USD\",\n  \"userId\": \"e7bdca08-056f-11e9-ade9-2dce83242c71\",\n  \"payeeId\": \"e7bdca08-056f-11e9-ade9-2dce83242c71\",\n  \"paymentMethodId\": \"e7bdca08-056f-11e9-ade9-2dce83242c71\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/payment/api/v0/sendPayment/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"payment",
+						"api",
+						"v0",
+						"sendPayment",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Wrong UserID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"amount\": 5666.2,\n  \"currency\": \"USD\",\n  \"userId\": \"e7bdca08-056f-11e9-ade9-2dce83242c7\",\n  \"payeeId\": \"e7bdca08-056f-11e9-ade9-2dce83242c71\",\n  \"paymentMethodId\": \"e7bdca08-056f-11e9-ade9-2dce83242c71\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/payment/api/v0/sendPayment/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"payment",
+						"api",
+						"v0",
+						"sendPayment",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Wrong payeeID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"amount\": 5666.2,\n  \"currency\": \"USD\",\n  \"userId\": \"e7bdca08-056f-11e9-ade9-2dce83242c71\",\n  \"payeeId\": \"e7bdca08-056f-11e9-ade9-2dce83242c1\",\n  \"paymentMethodId\": \"e7bdca08-056f-11e9-ade9-2dce83242c71\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/payment/api/v0/sendPayment/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"payment",
+						"api",
+						"v0",
+						"sendPayment",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
