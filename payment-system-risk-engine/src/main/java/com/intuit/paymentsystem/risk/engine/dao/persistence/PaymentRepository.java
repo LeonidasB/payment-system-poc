@@ -1,6 +1,6 @@
-package com.intuit.paymentsystem.risk.engine.persistence;
+package com.intuit.paymentsystem.risk.engine.dao.persistence;
 
-import com.intuit.paymentsystem.risk.engine.persistence.entity.PaymentEntity;
+import com.intuit.paymentsystem.risk.engine.dao.persistence.entity.PaymentEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

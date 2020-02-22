@@ -1,4 +1,4 @@
-package com.intuit.paymentsystem.risk.engine.persistence.entity;
+package com.intuit.paymentsystem.risk.engine.dao.persistence.entity;
 
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;

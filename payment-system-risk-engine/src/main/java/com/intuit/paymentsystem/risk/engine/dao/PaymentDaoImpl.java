@@ -1,8 +1,8 @@
 package com.intuit.paymentsystem.risk.engine.dao;
 
 import com.intuit.paymentsystem.api.ProcessedPayment;
-import com.intuit.paymentsystem.risk.engine.persistence.PaymentRepository;
-import com.intuit.paymentsystem.risk.engine.persistence.entity.PaymentEntity;
+import com.intuit.paymentsystem.risk.engine.dao.persistence.PaymentRepository;
+import com.intuit.paymentsystem.risk.engine.dao.persistence.entity.PaymentEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
