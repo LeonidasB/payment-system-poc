@@ -6,7 +6,7 @@ import com.intuit.paymentsystem.risk.engine.handler.RiskManager;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.annotation.JmsListener;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
 
 import javax.jms.Message;
 import javax.jms.ObjectMessage;
@@ -19,7 +19,7 @@ import static com.intuit.paymentsystem.api.Consts.QUEUE_NAME;
  * @date 21/02/2020
  * @since {version}
  */
-@Controller
+@Component
 @Slf4j
 public class PaymentListener {
     private RiskManager riskManager;
